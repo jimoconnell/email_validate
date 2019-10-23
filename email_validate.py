@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''Send mail using Sendgrid'''
+'''Validate emails'''
 # using SendGrid's Python Library
 # https://github.com/sendgrid/sendgrid-python
 import argparse
@@ -36,6 +36,7 @@ args = parser.parse_args()
 #    else:
 #        return False
 #print(args.echo)
+# This is some leftover code from a different program that I might decide to re-use, so, leaving it for now:
 #if yes_or_no("This script will send emails to actual customers specified in " + args.query + ".  \nAre you sure?"):
 #    print("Lmao :D")
 #else:
@@ -43,7 +44,9 @@ args = parser.parse_args()
 #    exit()
 
 if (args.mail_to_check):
-    if (validate_email(args.mail_to_check, verify=True)):
+    #if (validate_email(args.mail_to_check)): # Just a simple format test: something@something.something
+    #if (validate_email(args.mail_to_check, check_mx=True)): # Test format and check for Mail eXchanger
+    if (validate_email(args.mail_to_check, verify=True)): # Test as above, but test for user as well
         #print(bcolors.OKGREEN + mail_to_check + " appears to be valid" + bcolors.ENDC)
         print(args.mail_to_check)
     else:

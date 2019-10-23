@@ -12,6 +12,10 @@ validate_email library found at: https://pypi.org/project/validate_email/
 To install them, type:
 ```
 $ sudo pip3 install validate_email;
-$ sudo pip3 install py3dns;
+$ sudo pip3 install py3dns; # Note that is differs from pypi docs!
+```
+This program does the 3rd test, to check if the host has an SMTP Server and the email really exists.
+(I wrote it this way because it selfishly suits my purposes.)
 
-
+To use one of the other options, look at lines 47, 48 and 49 and 
+uncomment ONE of them.
